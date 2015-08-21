@@ -12,7 +12,7 @@ gem "uglifier"
 
 group :development, :test do
   gem "rspec-rails"
-  gem "sqlite3"
+  gem "pg"
   gem "launchy"
   gem "factory_girl_rails"
 end
