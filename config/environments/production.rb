@@ -36,13 +36,14 @@ PaperclipDemo::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Amazon S3 settings for Paperclip uploads
-  config.paperclip_defaults = {
-  :storage => :s3,
-  :s3_host_name => "s3-eu-west-1.amazonaws.com",
-  :s3_credentials => {
-  :bucket => 'S3_BUCKET_NAME',
-  :access_key_id => 'AWS_ACCESS_KEY_ID',
-  :secret_access_key => 'AWS_SECRET_ACCESS_KEY'
- }
-}
+  Paperclip::Attachment.default_options.merge!(
+  :storage => :fog,
+  :fog_credentials => {
+    :provider => 'AWS',
+    :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+  },
+  :fog_directory => ENV['S3_BUCKET_NAME'],
+  :bucket => ENV['S3_BUCKET_NAME']
+)
 end
