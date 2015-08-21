@@ -31,9 +31,10 @@ test:
   password: taytaytay
 
 production:
+  host: ec2-54-197-224-173.compute-1.amazonaws.com
   adapter: postgresql
   encoding: utf8
-  database: paperclip_demo_production
+  database: d52l6enuk8ju51
   pool: 5
-  username: tay
-  password: taytaytay
+  username: bntqymhmfrshvs
+  password: Ivegk47RKJCI4Zdxn91mHF4d4c
