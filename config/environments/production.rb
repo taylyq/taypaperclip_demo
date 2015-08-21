@@ -40,7 +40,7 @@ PaperclipDemo::Application.configure do
   :storage => :s3,
   :s3_host_name => "s3-eu-west-1.amazonaws.com",
   :s3_credentials => {
-  :bucket => 'AWS_BUCKET',
+  :bucket => 'S3_BUCKET_NAME',
   :access_key_id => 'AWS_ACCESS_KEY_ID',
   :secret_access_key => 'AWS_SECRET_ACCESS_KEY'
  }
