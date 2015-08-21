@@ -11,6 +11,7 @@ gem "sass-rails"
 gem "uglifier"
 gem 'fog'
 
+
 group :development, :test do
   gem "rspec-rails"
   gem "launchy"
@@ -20,4 +21,8 @@ end
 group :test do
   gem "capybara"
   gem "shoulda-matchers"
+end
+
+group :production do
+  gem 'rails_12factor'
 end
