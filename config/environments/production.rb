@@ -34,7 +34,7 @@ PaperclipDemo::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-
+  AWS::S3::DEFAULT_HOST.replace "s3-eu-west-1.amazonaws.com"
   # Amazon S3 settings for Paperclip uploads
   Paperclip::Attachment.default_options.merge!(
   :storage => :fog,
