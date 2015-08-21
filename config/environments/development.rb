@@ -19,12 +19,14 @@ Rails.application.configure do
   config.assets.debug = true
   config.assets.raise_runtime_errors = true
 
-  config.paperclip_defaults = {
-  :storage => :s3,
-  :s3_host_name => "s3-eu-west-1.amazonaws.com",
-  :s3_credentials => {
-  :bucket => ENV["paperclipdemodevelopment"],
-  :access_key_id => ENV["AKIAIRC7VNAH7ZGHUX2A"],
-  :secret_access_key => ENV["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"]
- }
+  Paperclip::Attachment.default_options.merge!(
+  :storage => :fog,
+  :fog_credentials => {
+    :provider => 'AWS',
+    :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+  },
+  :fog_directory => ENV['AWS_BUCKET'],
+  :bucket => ENV['AWS_BUCKET']
+)
 end

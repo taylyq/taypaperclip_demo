@@ -9,10 +9,10 @@ gem "paperclip"
 gem "pg"
 gem "sass-rails"
 gem "uglifier"
+gem 'fog'
 
 group :development, :test do
   gem "rspec-rails"
-  gem "pg"
   gem "launchy"
   gem "factory_girl_rails"
 end
